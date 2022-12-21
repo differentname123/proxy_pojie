@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Pzzqz">
+<meta name="keywords" content="pzzqz.com, pzzqzproject, proxy data, proxy server, free proxy, Anonymous Proxy, proxy list, public dns">
+<meta name="description" content="Pzzqz, anonymouse surfing with free working proxy server list database.">
+<meta property="og:title" content="Proxy List Home" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pzzqz.com/" />
+<link rel="alternate" type="application/rss+xml" title="Pzzqz's Feed" href='https://pzzqz.com/latest/feed/' />
+<title>
+    Proxy List Home | Pzzqz Project
+</title>
+<link rel="shortcut icon" href="/statics/assets/images/favicon/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/statics/assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/statics/assets/bootstrap/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="/statics/assets/flag-icon/css/flag-icon.min.css">
+<link rel="stylesheet" type="text/css" href="/statics/assets/nav.css">
+<link rel="stylesheet" type="text/css" href="/statics/assets/billboardjs/billboard.min.css">
+<link rel="stylesheet" type="text/css" href="/statics/assets/billboardjs/theme-datalab.min.css">
+<link rel="stylesheet" type="text/css" href="/statics/assets/main.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J9ZEMNG8SB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-J9ZEMNG8SB');
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white smart-scroll">
+<a class="navbar-brand" href="/">
+<img class="logo" src="/statics/assets/images/pzzqz_v101.png" alt="PzzqzProject">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+<i class="bi bi-list"></i>
+</button>
+<div class="collapse navbar-collapse" id="main_nav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link text-body active" href="/">Proxy</a>
+</li>
+<li class="nav-item">
+<a class="nav-link text-body " href="/public_dns/">Public DNS</a>
+</li>
+
+<li class="nav-item dropdown">
+<a class="nav-link text-body " href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown">
+Toolkit
+<i class="bi bi-tree"></i>
+</a>
+<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+<li>
+<a class="dropdown-item text-reset " href="/proxy/filter">Proxy Filter</a>
+</li>
+<li>
+<a class="dropdown-item text-reset " href="/proxy/check">Proxy Anonymity Check</a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link text-body " href="/docs/">Docs</a>
+</li>
+<li class="nav-item">
+<a class="nav-link text-body" href="#" data-toggle="tooltip" data-placement="right" data-html="true" title="<small>Coming soon</small>">Subscribe</a>
+</li>
+</ul>
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link text-body" href="/auth/login/">Sign in</a>
+</li>
+</ul>
+</div>
+</nav>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-md-5">
+<form onsubmit="return false" id="searchbox">
+<div class="row">
+<div class="col-4">
+<h6>Protocols</h6>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="http" id="http" checked>
+<label class="form-check-label" for="http">http</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="socks4" id="socks4" checked>
+<label class="form-check-label" for="socks4">socks4</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="socks5" id="socks5" checked>
+<label class="form-check-label" for="socks5">socks5</label>
+</div>
+</div>
+<div class="col-4">
+<h6>Anonymity</h6>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="transparent" id="transparent">
+<label class="form-check-label" for="transparent">Transparent</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="anonymous" id="anonymous">
+<label class="form-check-label" for="anonymous">Anonymous</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="elite" id="elite">
+<label class="form-check-label" for="elite">Elite</label>
+</div>
+</div>
+<div class="col-4">
+<div class="form-group">
+<label for="ping"><h6>Max Ping</h6></label>
+<div class="input-group input-group-sm mb-3 ping-group">
+<input type="text" class="form-control" id="ping" name="ping" value="3000" aria-describedby="basic-addon3" placeholder="ping...">
+<div class="input-group-append ping-append">
+<span class="input-group-text" id="basic-addon3">ms</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class="row no-gutters">
+<div class="col-8">
+<div class="form-group">
+<label for="country"><h6>Country/Region</h6></label>
+<select class="form-control form-control-sm col-10" id="country" name="country">
+<option value="all">all_country</option>
+<option value="-">-(1)</option>
+<option value="af">Afghanistan(11)</option>
+<option value="al">Albania(22)</option>
+<option value="dz">Algeria(1)</option>
+<option value="ad">Andorra(1)</option>
+<option value="ao">Angola(3)</option>
+<option value="ar">Argentina(963)</option>
+<option value="am">Armenia(9)</option>
+<option value="au">Australia(72)</option>
+<option value="at">Austria(18)</option>
+<option value="az">Azerbaijan(9)</option>
+<option value="bh">Bahrain(1)</option>
+<option value="bd">Bangladesh(231)</option>
+<option value="by">Belarus(28)</option>
+<option value="be">Belgium(4)</option>
+<option value="bj">Benin(4)</option>
+<option value="bo">Bolivia (Plurinational State Of)(20)</option>
+<option value="ba">Bosnia And Herzegovina(41)</option>
+<option value="bw">Botswana(25)</option>
+<option value="br">Brazil(1299)</option>
+<option value="bg">Bulgaria(125)</option>
+<option value="bi">Burundi(1)</option>
+<option value="kh">Cambodia(166)</option>
+<option value="cm">Cameroon(1)</option>
+<option value="ca">Canada(95)</option>
+<option value="td">Chad(1)</option>
+<option value="cl">Chile(49)</option>
+<option value="cn">China(4290)</option>
+<option value="co">Colombia(178)</option>
+<option value="cd">Congo (Democratic Republic Of The)(3)</option>
+<option value="cr">Costa Rica(6)</option>
+<option value="hr">Croatia(57)</option>
+<option value="cy">Cyprus(3)</option>
+<option value="cz">Czechia(99)</option>
+<option value="dk">Denmark(3)</option>
+<option value="do">Dominican Republic(98)</option>
+<option value="ec">Ecuador(100)</option>
+<option value="eg">Egypt(102)</option>
+<option value="gq">Equatorial Guinea(3)</option>
+<option value="ee">Estonia(1)</option>
+<option value="sz">Eswatini(1)</option>
+<option value="et">Ethiopia(1)</option>
+<option value="fi">Finland(18)</option>
+<option value="fr">France(376)</option>
+<option value="ge">Georgia(15)</option>
+<option value="de">Germany(578)</option>
+<option value="gh">Ghana(7)</option>
+<option value="gr">Greece(29)</option>
+<option value="gt">Guatemala(20)</option>
+<option value="gn">Guinea(1)</option>
+<option value="ht">Haiti(1)</option>
+<option value="hn">Honduras(19)</option>
+<option value="hk">Hong Kong(127)</option>
+<option value="hu">Hungary(156)</option>
+<option value="in">India(575)</option>
+<option value="id">Indonesia(2047)</option>
+<option value="ir">Iran (Islamic Republic Of)(743)</option>
+<option value="iq">Iraq(46)</option>
+<option value="ie">Ireland(17)</option>
+<option value="il">Israel(8)</option>
+<option value="it">Italy(197)</option>
+<option value="jp">Japan(172)</option>
+<option value="kz">Kazakhstan(35)</option>
+
+<option value="ke">Kenya(77)</option>
+<option value="kr">Korea (Republic Of)(124)</option>
+<option value="kw">Kuwait(1)</option>
+<option value="kg">Kyrgyzstan(12)</option>
+<option value="la">Lao People&#39;s Democratic Republic(1)</option>
+<option value="lv">Latvia(16)</option>
+<option value="lb">Lebanon(21)</option>
+<option value="ls">Lesotho(2)</option>
+<option value="ly">Libya(5)</option>
+<option value="lt">Lithuania(4)</option>
+<option value="lu">Luxembourg(1)</option>
+<option value="mo">Macao(2)</option>
+<option value="mg">Madagascar(3)</option>
+<option value="mw">Malawi(6)</option>
+<option value="my">Malaysia(73)</option>
+<option value="mv">Maldives(3)</option>
+<option value="ml">Mali(1)</option>
+<option value="mt">Malta(2)</option>
+<option value="mu">Mauritius(1)</option>
+<option value="mx">Mexico(112)</option>
+<option value="md">Moldova (Republic Of)(39)</option>
+<option value="mn">Mongolia(9)</option>
+<option value="me">Montenegro(3)</option>
+<option value="mz">Mozambique(6)</option>
+<option value="mm">Myanmar(4)</option>
+<option value="np">Nepal(56)</option>
+<option value="nl">Netherlands(140)</option>
+<option value="nz">New Zealand(2)</option>
+<option value="ni">Nicaragua(4)</option>
+<option value="ng">Nigeria(12)</option>
+<option value="mk">North Macedonia(22)</option>
+<option value="pk">Pakistan(58)</option>
+<option value="ps">Palestine, State Of(40)</option>
+<option value="pa">Panama(5)</option>
+<option value="pg">Papua New Guinea(2)</option>
+<option value="py">Paraguay(19)</option>
+<option value="pe">Peru(66)</option>
+<option value="ph">Philippines(20)</option>
+ <option value="pl">Poland(187)</option>
+<option value="pt">Portugal(3)</option>
+<option value="pr">Puerto Rico(4)</option>
+<option value="qa">Qatar(4)</option>
+<option value="ro">Romania(26)</option>
+<option value="ru">Russian Federation(1307)</option>
+<option value="rw">Rwanda(1)</option>
+<option value="mf">Saint Martin (French Part)(1)</option>
+<option value="ws">Samoa(1)</option>
+<option value="sa">Saudi Arabia(7)</option>
+<option value="sn">Senegal(1)</option>
+<option value="rs">Serbia(44)</option>
+<option value="sc">Seychelles(3)</option>
+<option value="sg">Singapore(325)</option>
+<option value="sk">Slovakia(25)</option>
+<option value="si">Slovenia(2)</option>
+<option value="so">Somalia(2)</option>
+<option value="za">South Africa(240)</option>
+<option value="es">Spain(208)</option>
+<option value="lk">Sri Lanka(1)</option>
+<option value="sd">Sudan(1)</option>
+<option value="sr">Suriname(1)</option>
+<option value="se">Sweden(32)</option>
+<option value="ch">Switzerland(4)</option>
+<option value="sy">Syrian Arab Republic(1)</option>
+<option value="tw">Taiwan (Province Of China)(77)</option>
+<option value="tj">Tajikistan(1)</option>
+<option value="tz">Tanzania, United Republic Of(11)</option>
+<option value="th">Thailand(2117)</option>
+<option value="tr">Turkey(117)</option>
+<option value="ug">Uganda(7)</option>
+<option value="ua">Ukraine(358)</option>
+<option value="ae">United Arab Emirates(21)</option>
+<option value="gb">United Kingdom Of Great Britain And Northern Ireland(298)</option>
+<option value="us">United States Of America(4048)</option>
+<option value="uy">Uruguay(13)</option>
+<option value="uz">Uzbekistan(14)</option>
+<option value="ve">Venezuela (Bolivarian Republic Of)(66)</option>
+<option value="vn">Viet Nam(93)</option>
+<option value="vg">Virgin Islands (British)(3)</option>
+<option value="ye">Yemen(28)</option>
+<option value="zm">Zambia(5)</option>
+<option value="zw">Zimbabwe(4)</option>
+</select>
+</div>
+</div>
+<div class="col-4">
+<div class="form-group">
+<label for="port"><h6>Port numbers</h6></label>
+<input type="text" class="form-control form-control-sm" id="ports" name="ports" value="" aria-describedby="Help2" placeholder="ports...">
+<small id="Help2" class="form-text text-muted">
+Add port numbers.
+<i class="bi bi-question-circle" data-toggle="tooltip" data-placement="right" data-html="true" title="Ports can be separated by commas or spaces, as well as ranges separated by hyphens.<br><br>For example: <strong>80-500,8080,9000-10000</strong>"></i>
+</small>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col text-right">
+<button class="btn btn-dark btn-sm" type="submit" id="search" aria-describedby="Help3" type="button">Search</button>
+<small id="Help3" class="form-text text-muted">
+<a class="text-reset" href="/settings/profile">
+You also can use our search API for <span class="text-warning font-weight-bold">free</span>.
+</a>
+</small>
+</div>
+</div>
+</form>
+</div>
+<div class="col-sm-12 col-md-7">
+<div id="areaChart"></div>
+</div>
+</div>
+</div>
+<br>
+<span id="loading" class="d-none">
+<div class="loader">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</span>
+<div id="proxies">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="table-responsive">
+<table class="table table-hover">
+<thead class="thead-light">
+<tr>
+<th scope="col">Ip Address</th>
+<th scope="col">Port</th>
+<th scope="col">Country/Region, City</th>
+<th scope="col" class="d-none d-sm-table-cell">Ping <i class="bi bi-question-circle" data-toggle="tooltip" data-placement="right" title="The detection nodes come from [&#39;JP&#39;, &#39;US&#39;, &#39;UK&#39;, &#39;DE&#39;, &#39;FR&#39;, &#39;RU&#39;, &#39;KR&#39;]"></i></th>
+<th scope="col">Protocol</th>
+<th scope="col" class="d-none d-sm-table-cell">Anonymity</th>
+<th scope="col">Last Status</th>
+<th scope="col" class="d-none d-sm-table-cell">Last Check(UTC)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>47.253.71.33</td>
+<td>1234</td>
+<td class="country">
+<span class="flag-icon flag-icon-us"></span>
+United States Of America, San Mateo
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="1261" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">1261</span>
+</div>
+</div>
+</td>
+<td>Http,Socks4</td>
+<td class="d-none d-sm-table-cell">Anonymous</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:52:51</td>
+</tr>
+<tr>
+<td>213.52.130.47</td>
+<td>3128</td>
+<td class="country">
+<span class="flag-icon flag-icon-gb"></span>
+United Kingdom Of Great Britain And Northern Ireland, London
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="1360" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">1360</span>
+</div>
+</div>
+</td>
+<td>Http,Socks4</td>
+<td class="d-none d-sm-table-cell">Elite</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:51:49</td>
+</tr>
+<tr>
+<td>47.254.239.51</td>
+<td>9999</td>
+<td class="country">
+<span class="flag-icon flag-icon-my"></span>
+Malaysia, Kuala Lumpur
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="1114" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">1114</span>
+</div>
+</div>
+</td>
+<td>Http,Socks4</td>
+<td class="d-none d-sm-table-cell">Elite</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:51:49</td>
+</tr>
+<tr>
+<td>124.71.157.181</td>
+<td>8060</td>
+<td class="country">
+<span class="flag-icon flag-icon-cn"></span>
+China, Shanghai
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">77</span>
+</div>
+</div>
+</td>
+<td>Http</td>
+<td class="d-none d-sm-table-cell">Elite</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:51:49</td>
+</tr>
+<tr>
+<td>45.79.222.38</td>
+<td>8081</td>
+<td class="country">
+<span class="flag-icon flag-icon-us"></span>
+United States Of America, Atlanta
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="1241" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">1241</span>
+</div>
+</div>
+</td>
+<td>Http,Socks4</td>
+<td class="d-none d-sm-table-cell">Anonymous</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:51:49</td>
+</tr>
+<tr>
+<td>23.92.31.240</td>
+<td>3128</td>
+<td class="country">
+<span class="flag-icon flag-icon-us"></span>
+United States Of America, Atlanta
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="2310" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">2310</span>
+</div>
+</div>
+</td>
+<td>Socks4</td>
+<td class="d-none d-sm-table-cell">Anonymous</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+ <td class="d-none d-sm-table-cell">2022-12-21 11:51:49</td>
+</tr>
+<tr>
+<td>192.53.126.128</td>
+<td>3128</td>
+<td class="country">
+<span class="flag-icon flag-icon-us"></span>
+United States Of America, Fremont
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="2216" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">2216</span>
+</div>
+</div>
+</td>
+<td>Socks4</td>
+<td class="d-none d-sm-table-cell">Elite</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:51:49</td>
+</tr>
+<tr>
+<td>47.91.95.174</td>
+<td>443</td>
+<td class="country">
+<span class="flag-icon flag-icon-de"></span>
+Germany, Frankfurt Am Main
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="1369" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">1369</span>
+</div>
+</div>
+</td>
+<td>Http,Socks4</td>
+<td class="d-none d-sm-table-cell">Elite</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:51:49</td>
+</tr>
+<tr>
+<td>8.213.128.6</td>
+<td>443</td>
+<td class="country">
+<span class="flag-icon flag-icon-sg"></span>
+Singapore, Singapore
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="1048" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">1048</span>
+</div>
+</div>
+</td>
+<td>Http,Socks4</td>
+<td class="d-none d-sm-table-cell">Anonymous</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:50:24</td>
+</tr>
+<tr>
+<td>47.88.29.108</td>
+<td>8888</td>
+<td class="country">
+<span class="flag-icon flag-icon-us"></span>
+United States Of America, San Mateo
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="1161" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">1161</span>
+</div>
+</div>
+</td>
+<td>Http,Socks4</td>
+<td class="d-none d-sm-table-cell">Elite</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:48:52</td>
+</tr>
+<tr>
+<td>47.253.105.175</td>
+<td>8081</td>
+<td class="country">
+<span class="flag-icon flag-icon-us"></span>
+United States Of America, San Mateo
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="1258" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">1258</span>
+</div>
+</div>
+</td>
+<td>Http,Socks4</td>
+<td class="d-none d-sm-table-cell">Elite</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:48:52</td>
+</tr>
+<tr>
+<td>47.252.20.42</td>
+<td>8888</td>
+<td class="country">
+<span class="flag-icon flag-icon-us"></span>
+United States Of America, San Mateo
+</td>
+<td class="d-none d-sm-table-cell">
+<div class="progress">
+<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="2311" aria-valuemin="0" aria-valuemax="100">
+<span style="color:#42464b">2311</span>
+</div>
+</div>
+</td>
+<td>Socks4</td>
+<td class="d-none d-sm-table-cell">Elite</td>
+<td>
+<i class="bi bi-sun text-success"></i>
+</td>
+<td class="d-none d-sm-table-cell">2022-12-21 11:48:52</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="row justify-content-center" id="verification_sign">
+<form id="captcha">
+<div class="text-center text-warning" id="message"></div>
+<br>
+<input type="text" id="fair_id" name="fair_id" value="21054c680e7c4631a046b21709c25fd5" hidden>
+<div class="form-group" id="verification_bar">
+<img class="align-middle" id="verification_image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAAA4CAIAAADxbbRpAAAMXklEQVR4nO1ceVgT1xY/hCQTkCAKCogPt/q59bW2KhjFuiBiUUq1itr6RFr9fOKCCCjW1tK6FEWwQF3a6kOpWneRtir0Ra0F05cutuorIi1uhVdFEGTLPu+PweswmZkkk0kIyO/LH5M7d5v53XPuueeeO07qOgV0oL1D0Nod6IA90EHzU4EOmp8KdND8VMBONGNSmX0aaougvJzQpI28N+HEbmljHqnqmkTeW+2AnWFCmtsix9iC/NbugsOBN6WNSUealc0jla8WmaDeHWp9JW1lljHzfZpQ2h1oH3iqLW07qBYHgf1otuidiu2iM9ui5cEN9qPZoneqYZ5KeBkBNjXTuCkJW6yjEGw+N2ML8nmxiewJsVSmqVO0p8UkF5ojlLJTAeaWKgyQAUCQssPQa01YTHOEsllnmsk0QTMLHGcEYFJZe113WEYz4pgAwXRhgIydKhaBZh8EfI0AysRhvTYOTdqYn7KWxy7ZGtylGUg0oxQWLi3ljGUEOI4CMBNMesJuZHOcm9E1WXUjYoxp4HeGbpURYDAYcBycndukp8FamsFokiZzEKPvVXLjNgDIBwEABBe3qGdV/Lz1yYvzvro4c85q2oYkEnH5rbNunVwAYO26HWkf7d+WujL3Zomxwvzvb2Xh0+Ny3O+zdJsyAg4eOhu98H0AwDBRZbkcw0TGRdau25G9L6/i9lkA+GT3ibiEtO2ZSdHzwgEAx/EXA+f+VlwGAEKh8+aNy5bGzCKXbWpS7/z02OcHTv9Rdtdd2mlk4HOrE6NGDBvM0kNuMEclsNHMYpKwM02AosyZBHp3du6S5ZsBAAAHcKLcvX71WJ/efgBQU1s/dMSchw8f/fT9/mf6/Y2cB8fx4NDFV66WKi/l9O3jBwCx8Wm7Pj1GzkOMMyaM+O4iLc2JazLyvrxYcu04AGi1uhcD33hYU1dy7XgnV5fS3+88+8ITXk8e3Ro2eTT6+6iuIXTK0p8vXyfXJhIJ846nTxg/gq0rtgGbCmIZARReaR39QUrFvEfdpbtzgFXN6rS6x5dUjgGgsVFNXHh0dtuesVql0iyLozofsrYfLlL8mrktkeAYAMLDgjK3JR45mCLP3/nrj1+U3zoTWPRdkFIRXIxH3usco+8VpFRcjloRXNysYMRiIW3f1CqNr48ncS0SCTetX1JZ+XDHrqMAID//A8rm6+sVGtLiAVcmplM4BgCtVrdg8Ya6+kamV2E7cJ9pyExPltNkEEtlAoGTXq8PUiqIHwAUBsgolOv1BsbOCQSeXd3R3ykvB0XOCDl3/ocjx75BiWU3y9d9sGtaxPjXZ09GiRODAxctmB4RPjZo1NCBA3p7eXqIREIAeDMqoqq6dvOmZQBgMDS3+8ptFycnmhEGABqN1sPjSQemho0ZPmzQ5tR99+9X5+ZdQOmRM0LIc3bJjdv7D56hrbC8/H7uqeaC9twwtcqgIDNNUePw2GFZ39BkXJAgG/Ht7e2prlMY/5pqi3x8vMgFt6bEuks7rV6bhVyDMctTXCRY1kerTG4dXiy8nJ3zZVLi/JdDRwOJZtdOEqYiao3WxQVDf52cnFJTVtQ3NM2NXvftxZ9ReuRrIeRSh44U4DjOVOfps0XNldtxQcWn3WjMtFqtVas06C+amMnC/Xz2toNdq1iqJfPn7e25OjGqoqLyRWFnAMg58PX5Cz+++/aCbl4e7LZkY6Nq4T83jB83/L13FhIpiAcykRTodHqKPh818rnoeeHfXvwJjZL+z/gPH9Zi5r/0/RWWnpTcuMVy1yS4ufStpZkySVOYVjWptTod0EGvNxBk/5nwPtApcwQKf8tiZvfy983cfqjw0i9Jb2f17eO38K1pJvuZvOFTlVqTs+d9gaD5kRFPLhJGmp2dBYS2J2NLSiyqBACio8IpGcpu/snSk7t375nsLQtYNnVYwIM0szDd0Ng0bWYCJpWhH2HyFAbIXD1GV1RUAgCGiZZBX/LMze4awzBRakqsTqefFLakqro2+d1FxkwAwBeH88ntZmR98ddfD3r2DXP3ekmt1pJzuroyKm2h0Fno7ExJLC29g4YIhonmz6PSXPOwDl336NGt7PqpqLlTye+E5elsBHoL01KcClDQamy93nD88JapYWNQIo7jRYGjAOCbMzu8vT0BwGDA9Xo9kFQ6mWlad0dE+Njn/t7/ytXS/s/4R86YSL6FSUeq674HgAcPami7qlZrm1RqDBMhs+vyLyUs8/qC6FcpKbv/lYuuJ04I9OzamZKBbFS+MnWsn1/312eH7tv/Fbqr0+mFQuroIYPYImPJYCl4m5uNzTG1RgMA3bp1IWdzcnIimBOsjCGs07r6xpIbtykSH1wMXfYeAAb5rm9oelBVAwCVldUPqmrJtwiOAUDCMONK3VwlmJjoCZHywtABtAaguk4RMHyIQNDCCFepNMdOPFlX3Ln7l06npzRBtuncpa4AQDbIXF0l7BwDV83MAnqazQ94Y1oVRChlhLqre9TAXkMD8zqSaSWWuPqje/eqYFZyTW19/Kp02rIL33xVXaf4ozjXrZPLyaNbEXMP/ieXSMQAIHhMM8E6E8jTMADkffVt7aN64loodL567fcPNn5GKeLXoxu6vqS4Uvuofu/nX6IU35ZrBw7gEI5IT7P5HlDyqoAySc+5Nh4A1BottUxLNDSqgGT3IpDXJBSy31DmJb+7qCZrXO9ePQ4f/ebf8v8wVR6XmD4pREb2TyEgaRaJafxfCKKWlnbOga/RdULcP6aGjUnPOHCj9A45z6CBfdB14aVfuvuFHDpSgFIoZjkHcPBP86O0kUxTmJ4sp/d+IM4AQK/X9/L3VdUWkbVlY03Rs0P6GZcacPrM3BovABh1eOdPY8ftca0AgBUJ6RSrisD5Cz/Kz/2wNSWWts+IZoq8kqE3GCTYE+V/81a5/NwT59ecWaEZafFikWhFQhq51CjZ80wVAsD4cY7k7LQoNIlFppFRygJnZwHlXdNuBOE4/taiD3AchhQUIPmWD4JdojvJ6z+hZNZqdctXpiatmu/n1522UTTpMnjAAACcBQJCwxPYvusoepwRwwYPHNC7Z0/vpFXz5eeUx0+eQ9nCw8YwDR2pm+vM1ybS3rIpGGm2ZtuczHS2zxraPGhlBQA3b1WQTTD0c+s65t69Kng85jI/PpRfoEj9cHkXDylRSZBS0fPocQCYUnCAYqll7ThsMOCxS+cwdRJJM7PDCnAcRzTX1NZn781Dt2ZHTiIuYpfO6de3Z+KaDOTv8/X1iggfS1thfNxcYsONX5icrfnfPSUoYfeDAmmCEYtFTK5BrVZnMOAAkJ+y9ufL19e+t2PEsMGRM1p4Fnv36lG69O3gYlgp6g8ky3zjh3sy0uJp950IIIFralQx5THgODLQ9mTnIiIFAsGM6cHENYaJMtMTysvvr9+0GxXcsmm5sRYZM3roqvgopraMYb6pZXK25p9mWjUQoaQR1ttx6wAg8OB2pqowTITWRVvScjw8pJ/tesc4W/S88IDhQ369UloSk4SU+Sn/JsmaFSyeFuFjpwqx8KPvgPjJ8vr0mSKU/tq0CWRn+8TgwJeCXgjXHyz9vdkW8/f3uXRhz5LFkX16+0kkYh8fr+VLZ586kW5RVAKPgWm2DeA1uS1to7jP34rLPLt29vb2JLtZKNvvGo22urrW3d2NxQtmjMIk1uC1FAeNXmKkma8wJSuZ5iXa0mS0Gk0RZjrtxiWPgeIWSzOH984UO0bA1oHc5PFKtDWhGM4NgiCloo2KJgfY6USkfZhuPi1hNBBp6Hy8/GlzQaLc0Ao0A0OUoJVvnINoclDmvMD+x3bsd76ZF6ZtpGZbi2+7wa7H2FmYptBsvgXE74mY9sq3vb9WEKGUnQmGl+UAAIkn2HK2rgXEvuFtDhzqQKVNaKYcMTJTNB3w7GS7EW6ONBuvqs2fNc1X3Y5zRNHkuU4HAdNY5BgkxOQ5MUfTUiKKWE5LOwjH0EZEmWUsWubT5iuCnD0etAPcwDIWLaOZSYgJ+i0ymmglmBxu4Aiw6fdA7AnTNJsT/y33SubQtsnNylaH8W5bG/2EoGmaTUYZEsaX9esfgmlHE2gK2tzncghwj9NGEdG04CCd5n+2pgOWgntYAQvH5kN1YqpxooMLdFuEZdJs7Nlh0diEdJr4GksAAHAMOuPlaALxROyaCcH6L8tYD0ofzAwLsNYLxtfETFOz4znF2i6sigXjwHH7+xoqj4su25nx/wdbwtSbJFywtgAAAABJRU5ErkJggg==" alt="verification image" data-toggle="tooltip" data-placement="left" title="Can not see clearly? Change one">
+<input type="text" class="form-control" id="verification_code" name="verification_code" aria-describedby="HelpInfo">
+
+<input type="number" class="form-control" id="page" name="page" value="1" hidden>
+</div>
+<div class="form-group">
+<img class="help_link" src="/statics/assets/images/help_link2.svg" alt="Help">
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="footer">
+<p>
+&copy; 2021 Pzzqz.CG ，
+<span class="font-weight-bold">ODR-ID: 9e:c0:1c:dddf086b496860</span> ，
+<a class="text-reset" target="_blank" href="https://github.com/pzzqzproject/fd/discussions">Community</a> ，
+<a class="text-reset" target="_blank" href="https://github.com/pzzqzproject/fd/issues">Support</a> ，
+<a class="text-reset" href="/sitemap.xml">Sitemap</a> ，
+<a class="text-reset" href="/latest/feed/">Latest Feed</a>
+</p>
+<p>
+<a class="text-reset" href="/privacy_policy">Privacy Policy</a> ，
+<a class="text-reset" href="/terms">Terms of Service</a>
+</p>
+</div>
+</div>
+<script type="text/javascript" src="/statics/assets/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/statics/assets/popper-1.16.1.min.js"></script>
+<script type="text/javascript" src="/statics/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/statics/assets/nav.js"></script>
+<script type="text/javascript" src="/statics/assets/billboardjs/d3.min.js"></script>
+<script type="text/javascript" src="/statics/assets/billboardjs/billboard.min.js"></script>
+<script type="text/javascript" src="/statics/assets/billboardjs/billboard.pkgd.min.js"></script>
+<script type="text/javascript" src="/statics/assets/jquery.serializejson.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+});
+
+
+function delay(callback, ms) {
+    var timer = 0;
+    return function () {
+        var context = this, args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            callback.apply(context, args);
+        }, ms || 0);
+    };
+};
+
+
+$("#search").on('click', function(event) {
+    event.preventDefault();
+    var searchbox = $("#searchbox").serializeJSON();
+    console.log(searchbox);
+    $.ajaxSetup({ headers: { "X-CSRFToken": "yClAJmeTYm6AhVsGMkX88DUg9kAh8vt0mEkafj4bG3Vx9mUVf02YfCJvAdxVjuVF" } });
+    $.ajax({
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        url: "/",
+        data: JSON.stringify(searchbox),
+        beforeSend: function () {
+            // console.log(json_data);
+            $('#loading').removeClass('d-none');
+            $("#proxies").addClass("main_overlay");
+            $("#search").attr("disabled", true);
+            $('#page').val(1);
+        },
+        success: function (data) {
+            console.log(data);
+            $('#loading').addClass('d-none');
+            $("#proxies").removeClass("main_overlay");
+            $("#search").attr("disabled", false);
+            $("#proxies tbody").html(data.proxy_html);
+            if ( data.has_next ) {
+                var page = +$('#page').val() + 1;
+                // console.log(page);
+                $('#page').val(page);
+                // console.log(data.b64image);
+                // console.log("------");
+                $("#verification_image").prop('src', data.b64image);
+                $('#verification_sign').show();
+                $('.help_link').show();
+            } else {
+                $('#verification_sign').hide();
+                $('.help_link').hide();
+            }
+        },
+        error: function (err) {
+            console.log(err);
+            $('#loading').addClass('d-none');
+            $("#proxies").removeClass("main_overlay");
+            $("#search").attr("disabled", false);
+        }
+    });
+});
+
+
+
+$("#verification_code").bind("keyup change", delay(function(event) {
+    event.preventDefault();
+    var searchbox = $("#searchbox").serializeJSON();
+    var captcha = $("#captcha").serializeJSON();
+    var all_data = $.extend(searchbox, captcha);
+    $.ajaxSetup({ headers: { "X-CSRFToken": "yClAJmeTYm6AhVsGMkX88DUg9kAh8vt0mEkafj4bG3Vx9mUVf02YfCJvAdxVjuVF" } });
+    $.ajax({
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        url: "/",
+        data: JSON.stringify(all_data),
+        beforeSend: function () {
+            $('#loading').removeClass('d-none');
+            $("#proxies").addClass("main_overlay");
+            $('#message').addClass('d-none');
+        },
+        success: function (data) {
+            // console.log(data);
+            $('#loading').addClass('d-none');
+            $("#proxies").removeClass("main_overlay");
+            $("#search").attr("disabled", false);
+            if (data.state) {
+                $("#proxies tbody").append(data.proxy_html);
+                if (data.has_next) {
+                    var page = +$('#page').val() + 1;
+                    $('#page').val(page);
+                    // console.log(data.b64image);
+                    $("#verification_image").prop('src', data.b64image);
+                    $('#verification_sign').show();
+                    $('.help_link').show();
+                } else {
+                    $('#verification_sign').hide();
+                    $('.help_link').hide();
+                }
+            } else {
+                $("#verification_image").prop('src', data.b64image);
+                $('#message').removeClass('d-none');
+                $('#message').text("Incorrect verification code!");
+            }
+        },
+        error: function (err) {
+            console.log(err);
+            $('#message').removeClass('d-none');
+            $('#message').text(err);
+            $('#loading').addClass('d-none');
+            $("#proxies").removeClass("main_overlay");
+        }
+    });
+}, 1500));
+
+
+$("#verification_image").on('click', function (event) {
+    event.preventDefault();
+    $.ajax({
+        type: "GET",
+        url: "/captcha/renew",
+        beforeSend: function () {
+            $('#message').addClass('d-none');
+        },
+        success: function (data) {
+            // console.log(data);
+            $("#verification_image").prop('src', data.b64image);
+        },
+        error: function (err) {
+            console.log(err);
+            $('#message').text(err);
+            $('#message').removeClass('d-none');
+        }
+    });
+});
+
+
+const myColumns = [['x', '2022-12-20 11:38:14', '2022-12-20 12:08:14', '2022-12-20 12:38:14', '2022-12-20 13:08:14', '2022-12-20 13:38:14', '2022-12-20 14:08:14', '2022-12-20 14:38:14', '2022-12-20 15:08:14', '2022-12-20 15:38:15', '2022-12-20 16:08:15', '2022-12-20 16:38:15', '2022-12-20 17:08:15', '2022-12-20 17:38:15', '2022-12-20 18:08:15', '2022-12-20 18:38:15', '2022-12-20 19:08:15', '2022-12-20 19:38:15', '2022-12-20 20:08:15', '2022-12-20 20:38:15', '2022-12-20 21:08:15', '2022-12-20 21:38:15', '2022-12-20 22:08:15', '2022-12-20 22:38:15', '2022-12-20 23:08:15', '2022-12-20 23:38:15', '2022-12-21 00:08:15', '2022-12-21 00:38:15', '2022-12-21 01:08:15', '2022-12-21 01:38:15', '2022-12-21 02:08:15', '2022-12-21 02:38:15', '2022-12-21 03:08:15', '2022-12-21 03:38:15', '2022-12-21 04:08:15', '2022-12-21 04:38:15', '2022-12-21 05:08:15', '2022-12-21 05:38:15', '2022-12-21 06:08:15', '2022-12-21 06:38:15', '2022-12-21 07:08:15', '2022-12-21 07:38:15', '2022-12-21 08:08:15', '2022-12-21 08:38:15', '2022-12-21 09:08:15', '2022-12-21 09:38:15', '2022-12-21 10:08:15', '2022-12-21 10:38:15', '2022-12-21 11:08:15'], ['http', 39, 39, 48, 44, 42, 18, 7, 7, 9, 15, 14, 19, 22, 28, 46, 42, 41, 28, 11, 8, 3, 3, 0, 3, 5, 8, 8, 5, 3, 3, 3, 3, 3, 1, 4, 8, 10, 10, 8, 4, 3, 10, 22, 30, 40, 36, 27, 32], ['socks4', 13, 20, 27, 30, 30, 13, 6, 5, 4, 7, 7, 6, 17, 27, 79, 77, 66, 52, 1, 1, 1, 1, 0, 1, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 11, 15, 18, 13, 11], ['socks5', 0, 4, 6, 6, 6, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ['socks4,socks5', 0, 11, 11, 12, 12, 2, 3, 2, 2, 1, 2, 4, 4, 5, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ['http,socks5', 0, 1, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+const myTypes = {'http': 'area-spline', 'socks4': 'area-spline', 'socks5': 'area-spline', 'socks4,socks5': 'area-spline', 'http,socks5': 'area-spline'};
+var chart = bb.generate({
+    data: {
+        x: "x",
+        xFormat: '%Y-%m-%d %H:%M:%S',
+        columns: myColumns,
+        types: myTypes,
+    },
+    tooltip: { show: true },
+    padding: { right: 0 },
+    // bar: {
+    //     width: 5,
+    //     zerobased: true
+    // },
+    // point: {
+    //     show: false
+    // },
+    axis: {
+        x: {
+            "type": "timeseries",
+            "tick": {"format": "%y/%m/%d %H:%M", "autorotate": true, "count": 12},
+            "padding": {"left": 0},
+            "label": {
+                "text": "Last 24 Hours Inflow Capacity",
+                "position": "outer-middle"
+            }
+        },
+        y: {
+            // "show": false,
+            "tick": {"culling": true},
+            "label": {"text": "Totals", "position": "outer-middle"}
+        }
+    },
+    bindto: "#areaChart"
+});
+</script>
+</body>
+</html>
