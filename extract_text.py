@@ -154,6 +154,6 @@ def easy_ocr(file_path):
 
 if __name__ == '__main__':
 
-    file_name = "D:/project/python_project/little_empire/proxy_thread_request-master/text"
+    file_name = "D:/project/python_project/little_empire/laolong_pic_1222"
     # get_text(file_name)
     easy_ocr(file_name)
